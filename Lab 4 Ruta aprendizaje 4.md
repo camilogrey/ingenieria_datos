@@ -21,27 +21,27 @@ Las soluciones de análisis de datos a escala empresarial se fundamentan en estr
 
 1. **Almacenes de Datos (Data Warehouses)** 
 
-![Data warehouse](https://github.com/camilogrey/ingenieria_datos/blob/main/Captura%20de%20pantalla%202026-06-30%20180325.png?raw=true)
+![Data warehouse](imagenes_lab4/Captura%20de%20pantalla%202026-06-30%20180325.png)
 
 2. **Lagos de Datos (Data Lakes)**
 
-![Data Lake](https://github.com/camilogrey/ingenieria_datos/blob/main/Captura%20de%20pantalla%202026-06-30%20180351.png?raw=true)
+![Data Lake](imagenes_lab4/Captura%20de%20pantalla%202026-06-30%20180351.png)
 
 3. **Enfoques Híbridos (Data Lakehouses)**
 
-![Data Lake house](https://github.com/camilogrey/ingenieria_datos/blob/main/Captura%20de%20pantalla%202026-06-30%20183342.png?raw=true)
+![Data Lake house](imagenes_lab4/Captura%20de%20pantalla%202026-06-30%20183342.png)
 
-![](https://github.com/camilogrey/ingenieria_datos/blob/main/Captura%20de%20pantalla%202026-06-30%20191447.png?raw=true)
+![](imagenes_lab4/Captura%20de%20pantalla%202026-06-30%20191447.png)
 
 **En reumen**
 
-![](https://github.com/camilogrey/ingenieria_datos/blob/main/Captura%20de%20pantalla%202026-06-30%20180419.png?raw=true)
+![](imagenes_lab4/Captura%20de%20pantalla%202026-06-30%20180419.png)
 
 ---
 ### Ecosistemas Analíticos en Microsoft Azure
-![](https://github.com/camilogrey/ingenieria_datos/blob/main/Captura%20de%20pantalla%202026-06-30%20173734.png?raw=true)
+![](imagenes_lab4/Captura%20de%20pantalla%202026-06-30%20173734.png)
 
-![](https://github.com/camilogrey/ingenieria_datos/blob/main/Captura%20de%20pantalla%202026-06-30%20173401.png?raw=true)
+![](imagenes_lab4/Captura%20de%20pantalla%202026-06-30%20173401.png)
 
 #### A. Microsoft Fabric (Plataforma SaaS unificada sobre OneLake)
 * **OneLake:** Capa única de almacenamiento compartido para toda la organización.
@@ -52,14 +52,14 @@ Las soluciones de análisis de datos a escala empresarial se fundamentan en estr
     * **OneLake Shortcuts:** Enlaces en vivo a nubes externas (ADLS Gen2, AWS S3, GCS) sin duplicación de archivos.
     * **Mirroring:** Replicación automatizada en tiempo casi real desde bases de datos operacionales (Azure SQL, Snowflake) hacia Delta Lake.
 
-![](https://github.com/camilogrey/ingenieria_datos/blob/main/Captura%20de%20pantalla%202026-06-30%20173856.png?raw=true)
+![](imagenes_lab4/Captura%20de%20pantalla%202026-06-30%20173856.png)
 
 #### B. Azure Databricks (Plataforma PaaS basada en Apache Spark)
 * Optimizado para ingeniería de datos a gran escala y cargas de trabajo complejas de machine learning.
 * Usa **Delta Lake** de forma nativa para control de esquemas y consistencia transaccional.
 * **Databricks SQL Warehouse:** Puntos de conexión dedicados y optimizados para herramientas de Business Intelligence (BI).
   
-![](https://github.com/camilogrey/ingenieria_datos/blob/main/Captura%20de%20pantalla%202026-06-30%20174211.png?raw=true)
+![](imagenes_lab4/Captura%20de%20pantalla%202026-06-30%20174211.png)
 
 ---
 
@@ -74,7 +74,7 @@ Las soluciones de análisis de datos a escala empresarial se fundamentan en estr
 | **Latencia** | Minutos u horas. | Segundos o milisegundos. |
 | **Complejidad** | Consultas complejas y agregaciones pesadas. | Agregaciones simples y transformaciones rápidas. |
 
-![](https://github.com/camilogrey/ingenieria_datos/blob/main/Captura%20de%20pantalla%202026-06-30%20184234.png?raw=true)
+![](imagenes_lab4/Captura%20de%20pantalla%202026-06-30%20184234.png)
 
 
 ### Arquitectura General de Streaming
@@ -84,33 +84,33 @@ Las soluciones de análisis de datos a escala empresarial se fundamentan en estr
 3.  **Procesamiento:** Consultas perpetuas operadas sobre ventanas de tiempo deslizantes.
 4.  **Destino (Sink):** Capa final de persistencia de resultados procesados (tablas, archivos o cuadros de mando).
 
-![](https://github.com/camilogrey/ingenieria_datos/blob/main/Captura%20de%20pantalla%202026-06-30%20185724.png?raw=true)
+![](imagenes_lab4/Captura%20de%20pantalla%202026-06-30%20185724.png)
 
 * **Tecnologías de Ingesta (Sources):** Azure Event Hubs (Cola de eventos que asegura el procesamiento ordenado y único), Azure IoT Hub, Azure Data Lake Store Gen 2 (Almacenamiento escalable usado como origen de archivos de streaming) y Apache Kafka (Solución de código abierto complementaria a Apache Spark).
   
-![](https://github.com/camilogrey/ingenieria_datos/blob/main/Captura%20de%20pantalla%202026-06-30%20185901.png?raw=true)
+![](imagenes_lab4/Captura%20de%20pantalla%202026-06-30%20185901.png)
 
 * **Motores de Procesamiento:** Spark Structured Streaming (que mapea flujos vivos en Dataframes crecientes) y Azure Stream Analytics (PaaS independiente).
 
-![](https://github.com/camilogrey/ingenieria_datos/blob/main/Captura%20de%20pantalla%202026-06-30%20185839.png?raw=true)
+![](imagenes_lab4/Captura%20de%20pantalla%202026-06-30%20185839.png)
 
 * **Destinos Analíticos (Sinks):** •	Azure Event Hubs: Para encadenar datos procesados hacia otros flujos descendientes.
 •	Almacenamiento en archivos: Azure Data Lake Gen 2, Microsoft OneLake o Azure Blob Storage.
 •	Almacenamiento en tablas: Azure SQL Database, Azure Databricks o Microsoft Fabric para consultas analíticas
 
-![](https://github.com/camilogrey/ingenieria_datos/blob/main/Captura%20de%20pantalla%202026-06-30%20185920.png?raw=true)
+![](imagenes_lab4/Captura%20de%20pantalla%202026-06-30%20185920.png)
 
 * **Servicios de Análitica en tiempo real:**
 •	Microsoft Fabric Real-Time Intelligence: Herramienta integrada en Fabric. Incluye Eventstreams ingesta y ruta, Eventhouse (base de datos optimizada para series temporales mediante consultas KQL), Real-Time Dashboards (visualización) y Activator (acciones automatizadas).
 •	Spark Structured Streaming: Biblioteca de código abierto para soluciones complejas en Apache Spark (compatible con Fabric y Azure Databricks).
 •	Azure Stream Analytics: Solución PaaS para definir trabajos analíticos con consultas perpetuas fuera del ecosistema de Fabric.
 
-![](https://github.com/camilogrey/ingenieria_datos/blob/main/Captura%20de%20pantalla%202026-06-30%20190845.png?raw=true)
+![](imagenes_lab4/Captura%20de%20pantalla%202026-06-30%20190845.png)
 
 * **Procesamiento Masivo**
 Apache Spark: Motor de procesamiento masivo diseñado para manejar grandes volúmenes de datos rápidamente, dividiendo el trabajo en paralelo a través de un clúster de máquinas. Está disponible en Azure mediante Microsoft Fabric y Azure Databricks, soportando Python, Scala, Java y SQL tanto para procesamiento por lotes (batch) como en tiempo real (streaming).
 
-![](https://github.com/camilogrey/ingenieria_datos/blob/main/Captura%20de%20pantalla%202026-06-30%20191230.png?raw=true)
+![](imagenes_lab4/Captura%20de%20pantalla%202026-06-30%20191230.png)
 
 ---
 
@@ -120,26 +120,40 @@ Para habilitar la toma de decisiones empresariales de forma segura, Power BI enc
 
 ### Flujo de Trabajo Típico de Inteligencia de Negocio
 
+![](/imagenes_lab4/Captura%20de%20pantalla%202026-06-30%20192126.png)
+
+![](/imagenes_lab4/Captura%20de%20pantalla%202026-06-30%20193058.png)
+
 ### Modelado de Datos: Diseño de Esquemas Analíticos
 
 Los datos crudos de las tablas de hechos (eventos numéricos como ventas) se organizan mapeando relaciones con tablas de dimensiones (entidades de negocio para filtrar, como Clientes o Tiempo).
 
+![](/imagenes_lab4/Captura%20de%20pantalla%202026-06-30%20193328.png)
+
 * **Esquema de Estrella (*Star Schema*):** Modelo recomendado donde cada dimensión se vincula directamente a la tabla de hechos.
+
+![](/imagenes_lab4/Captura%20de%20pantalla%202026-06-30%20193458.png)
+
 * **Esquema de Copo de Nieve (*Snowflake Schema*):** Extensión donde las dimensiones se normalizan y conectan a sub-tablas de detalle (ej. Producto ➔ Categoría).
 
-
-
-[Image of Star Schema vs Snowflake Schema diagrams]
+![](/imagenes_lab4/Captura%20de%20pantalla%202026-06-30%20193520.png)]
 
 
 * **Jerarquías de Atributos:** Estructuras lógicas que configuran caminos de exploración analítica profunda (ej. Año ➔ Mes ➔ Día). El motor **VertiPaq** calcula en memoria estas agregaciones bajo demanda con un rendimiento ultra veloz.
+
+![](/imagenes_lab4/Captura%20de%20pantalla%202026-06-30%20193635.png)
+
 * **Modo Direct Lake:** Conexión exclusiva dentro de Microsoft Fabric que lee directamente archivos Parquet de OneLake, evitando ciclos tradicionales de importación o duplicación de datos.
 
 ### Herramientas Visuales e Inteligencia Artificial en Informes
 
 Además de los gráficos tradicionales (líneas, columnas, mapas), Power BI integra componentes nativos potenciados por Machine Learning para descubrir patrones ocultos de forma automatizada:
 
+![](/imagenes_lab4/Captura%20de%20pantalla%202026-06-30%20193705.png)
+
 * **Narrativas Inteligentes (*Smart Narratives*):** Genera explicaciones textuales ejecutivas de forma dinámica según el estado de los filtros aplicados.
 * **Esquema de Descomposición (*Decomposition Tree*):** Permite desglosar y desarmar visualmente una métrica a través de múltiples dimensiones consecutivas.
 * **Elementos Influyentes Clave (*Key Influencers*):** Evalúa numéricamente qué variables contextuales impulsan un indicador de negocio hacia arriba o hacia abajo.
 * **Visual de Preguntas y Respuestas (Q&A):** Responde preguntas de negocio con gráficos construidos al vuelo a partir de lenguaje natural.
+
+![](/imagenes_lab4/Captura%20de%20pantalla%202026-06-30%20194015.png)
