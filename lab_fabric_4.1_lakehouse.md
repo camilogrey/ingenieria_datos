@@ -173,3 +173,8 @@ Utilizar el punto de análisis de SQL (*SQL analytics endpoint*) integrado en Mi
 
 ![Métricas y Filas Resultantes de la Consulta SQL](imagenes_4.1/Captura%20de%20pantalla%202026-07-01%20195321.png)
 
+## Eliminar Recursos
+
+![Métricas y Filas Resultantes de la Consulta SQL](imagenes_4.1/Captura%20de%20pantalla%202026-07-01%20200230.png)
+
+ 
