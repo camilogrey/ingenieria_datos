@@ -71,3 +71,80 @@ Este repositorio contiene las evidencias del laboratorio práctico **"Create a l
 
 ![Interfaz Inicial de taxi_lakehouse en OneLake](imagenes_4.1/Captura%20de%20pantalla%202026-07-01%20185336.png)
 
+
+# Ingesta de Datos 
+
+Implementar una tarea automatizada de copia sin código (*Copy job*) para extraer un conjunto de datos de prueba externo (NYC Taxi - Green) e importarlo directamente como una tabla administrada dentro de nuestro Lakehouse.
+
+---
+
+## 1. Inicialización de la Tarea de Copia (New Copy Job)
+* **Descripción:** En la consola principal de `taxi_lakehouse`, se desplegó el menú superior **Get data** (Obtener datos) y se seleccionó la opción **New copy job** para iniciar el asistente guiado de ingesta.
+
+![Inicio de la Tarea de Copia](imagenes_4.1/Captura%20de%20pantalla%202026-07-01%20191443.png)
+
+---
+
+## 2. Creación y Nombramiento de la Tarea
+* **Descripción:** Se abrió el cuadro de diálogo interactivo para parametrizar la tarea. Se le asignó el nombre comercial `Ingest Data` dentro del espacio de trabajo del proyecto antes de proceder a la creación del flujo.
+
+![Parámetros de la nueva tarea Ingest Data](imagenes_4.1/Captura%20de%20pantalla%202026-07-01%20191523.png)
+
+---
+
+## 3. Conexión al Catálogo de Orígenes
+* **Descripción:** Dentro del asistente *Copy job*, en la primera fase (*Choose data source*), la interfaz expone la lista de orígenes de datos disponibles en la plataforma Fabric.
+
+![Catálogo de Conectores de Origen](imagenes_4.1/Captura%20de%20pantalla%202026-07-01%20191635.png)
+
+---
+
+## 4. Selección del Dataset de Prueba (NYC Taxi - Green)
+* **Descripción:** Se accedió a la pestaña **Sample data** (Datos de muestra) y se seleccionó el conjunto de datos estandarizado `NYC Taxi - Green` (de 2 GB en formato Parquet) diseñado para simular flujos de Big Data.
+
+![Selección de la Muestra NYC Taxi](imagenes_4.1/Captura%20de%20pantalla%202026-07-01%20191656.png)
+
+---
+
+## 5. Vista Previa de los Datos (Choose Data)
+* **Descripción:** Avanzando a la etapa *Choose data*, el sistema cargó una previsualización estructural del archivo origen, permitiendo inspeccionar las columnas y formatos nativos de los viajes en taxi antes de procesar el flujo.
+
+![Vista Previa de Filas y Columnas del Dataset](imagenes_4.1/Captura%20de%20pantalla%202026-07-01%20191731.png)
+
+---
+
+## 6. Configuración del Método de Lectura y Destino (Settings)
+* **Descripción:** En la sección *Settings*, se determinó la lógica de ingesta:
+  * **Método de lectura:** Copia completa (*Full copy*) para transferir toda la información en una sola corrida.
+  * **Carpeta raíz destino:** Directorio de **Tables** (Tablas), garantizando la conversión directa del archivo origen a una estructura Delta Lake consultable.
+
+![Configuración de Copia y Destino](imagenes_4.1/Captura%20de%20pantalla%202026-07-01%20192012.png)
+
+---
+
+## 7. Mapeo y Destino de Esquemas (Map to Destination)
+* **Descripción:** En el paso *Map to destination*, se configuró el enrutamiento lógico hacia el almacén final. Se estableció el esquema de base de datos por defecto (`dbo`) y se especificó el nombre de la tabla destino (`parquet`).
+
+![Mapeo de la Tabla Hacia dbo.parquet](imagenes_4.1/Captura%20de%20pantalla%202026-07-01%20192114.png)
+
+---
+
+## 8. Revisión y Confirmación de Ejecución (Review + Save)
+* **Descripción:** Fase final de validación donde se muestra el resumen integral del origen y destino del flujo. Se habilitó el checkbox de inicio inmediato de la transferencia de datos (*Start data transfer immediately*) y se presionó **Save + Run**.
+
+![Resumen General e Inicio del Flujo](imagenes_4.1/Captura%20de%20pantalla%202026-07-01%20192133.png)
+
+---
+
+## 9. Monitoreo y Éxito de la Ingesta
+* **Descripción:** El panel de control e historial de ejecuciones (*Results*) reportó el estado del proceso en tiempo real. La ingesta finalizó de manera exitosa con estado **Succeeded** tras una duración de 2 minutos y 9 segundos, completando el procesamiento de la tabla (1/1).
+
+![Estado Succeeded del Pipeline de Copia](imagenes_4.1/Captura%20de%20pantalla%202026-07-01%20192823.png)
+
+---
+
+## 10. Validación de Datos en la Tabla Delta Lake
+* **Descripción:** Al retornar al explorador del Lakehouse, se refrescó el nodo de las tablas y se seleccionó la entidad recién creada. La consola web renderizó la vista de tabla expuesta (*Table view*), confirmando que las primeras 1,000 filas con sus 23 columnas de atributos se estructuraron correctamente bajo el formato Delta Lake.
+
+![Inspección de Registros Ingeridos en taxi_lakehouse](imagenes_4.1/Captura%20de%20pantalla%202026-07-01%20193520.png)
+
