@@ -148,3 +148,28 @@ Implementar una tarea automatizada de copia sin código (*Copy job*) para extrae
 
 ![Inspección de Registros Ingeridos en taxi_lakehouse](imagenes_4.1/Captura%20de%20pantalla%202026-07-01%20193520.png)
 
+# Consulta de Datos en un Lakehouse mediante SQL
+
+Utilizar el punto de análisis de SQL (*SQL analytics endpoint*) integrado en Microsoft Fabric para interrogar la tabla Delta Lake mediante consultas relacionales tradicionales y extraer métricas agregadas sobre los viajes en taxi.
+
+---
+
+## 1. Cambio al Entorno de Análisis SQL (SQL Analytics Endpoint)
+* **Descripción:** En la esquina superior derecha del panel del Lakehouse, se interactuó con el selector de vistas para cambiar desde el entorno de archivos hacia el **SQL analytics endpoint**. Esta consola expone las tablas del OneLake bajo una semántica de base de datos relacional optimizada para consultas de lectura.
+
+![Activación del SQL Analytics Endpoint](imagenes_4.1/Captura%20de%20pantalla%202026-07-01%20195029.png)
+
+---
+
+## 2. Redacción de la Consulta de Agregación (New SQL Query)
+* **Descripción:** Se creó una nueva hoja de trabajo seleccionando **New SQL query**. En el editor de código se estructuró una consulta SQL orientada a agrupar los registros por el nombre del día de la semana (`DATENAME`) y calcular la distancia promedio de los recorridos (`AVG`), tomando como origen de datos la tabla relacional.
+
+![Editor de Consultas con el Script SQL](imagenes_4.1/Captura%20de%20pantalla%202026-07-01%20195201.png)
+
+---
+
+## 3. Ejecución del Script y Análisis de Resultados
+* **Descripción:** Se presionó el botón **▷ Run** para procesar la consulta en el motor de Fabric. La sección inferior de resultados (*Results*) renderizó exitosamente el reporte consolidado mostrando la métrica calculada (`AvgDistance`) mapeada de manera independiente para cada uno de los 7 días de la semana.
+
+![Métricas y Filas Resultantes de la Consulta SQL](imagenes_4.1/Captura%20de%20pantalla%202026-07-01%20195321.png)
+
