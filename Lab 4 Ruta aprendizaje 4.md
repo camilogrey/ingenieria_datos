@@ -10,7 +10,10 @@ Las soluciones de análisis de datos a escala empresarial se fundamentan en estr
 
 ### Comparativa de Conceptos de Almacenamiento
 
-![](https://github.com/camilogrey/ingenieria_datos/blob/main/Captura%20de%20pantalla%202026-06-30%20175340.png?raw=true)
+![h](https://github.com/camilogrey/ingenieria_datos/blob/main/Captura%20de%20pantalla%202026-06-30%20175340.png?raw=true)
+
+![h](/Captura%20de%20pantalla%202026-06-30%20175340.png)
+
 
 | Concepto | Características Clave | Casos de Uso Ideales |
 | :--- | :--- | :--- |
