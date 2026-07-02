@@ -60,3 +60,54 @@ Este repositorio contiene las evidencias del laboratorio práctico **"Create an 
 * **Descripción:** La plataforma ejecutó las tareas en segundo plano. La consola web reportó el estado **Successful** de manera simultánea para los procesos de creación del contenedor central (*Create Eventstream*) y de la fuente emisora (*Create Eventstream source*), habilitando el botón de acceso final **Open Eventstream**.
 
 ![Notificación de Despliegue Exitoso del Eventstream](imagenes_4.2/Captura%20de%20pantalla%202026-07-02%20170830.png)
+
+# Reporte de Laboratorio: Creación de un Eventhouse y Almacenamiento de Streams
+
+Este repositorio documenta el desarrollo práctico del laboratorio **"Create an eventhouse and store the stream"**. El objetivo principal fue configurar un destino de almacenamiento persistente optimizado para datos en tiempo real (*Eventhouse*) y enlazarlo de forma directa con el flujo continuo (*Eventstream*) previamente creado en Microsoft Fabric.
+
+---
+
+## 1. Adición de un Destino en el Lienzo de Diseño
+* **Descripción:** Con el Eventstream abierto en modo de edición (*Edit mode*), se accedió a la barra de herramientas superior para desplegar las opciones de integración de datos.
+* **Acción:** Se seleccionó la opción **Add destination** y se eligió **Eventhouse** como el componente para la persistencia duradera del flujo continuo.
+
+![Menú Desplegable para Agregar Destino](imagenes_4.2/Captura%20de%20pantalla%202026-07-02%20172934.png)
+
+---
+
+## 2. Aprovisionamiento del Nuevo Eventhouse
+* **Descripción:** En el panel lateral derecho de configuración, se establecieron las propiedades de la ingesta eligiendo el procesamiento de eventos antes de la inserción (*Event processing before ingestion*).
+* **Acción:** Al no contar con una instancia previa, se seleccionó *Create new* para dar de alta un nuevo Eventhouse bajo el nombre técnico `taxi-eventhouse`, vinculándolo al espacio de trabajo del proyecto (`dp900-streaming`).
+
+![Formulario Lateral de Creación de Eventhouse](imagenes_4.2/Captura%20de%20pantalla%202026-07-02%20174123.png)
+
+---
+
+## 3. Estructuración de la Tabla de Destino KQL
+* **Descripción:** Continuando con el asistente de configuración del destino, se procedió a definir la estructura de almacenamiento relacional interna de la base de datos Kusto (KQL).
+* **Acción:** Se seleccionó *Create new* bajo el campo de tabla destino y se creó la entidad llamada `yellow-taxi`, asegurando que la casilla de activación inmediata de ingesta quedara marcada antes de guardar los cambios.
+
+![Asistente de Configuración de Tabla Yellow-Taxi](imagenes_4.2/Captura%20de%20pantalla%202026-07-02%20174302.png)
+
+---
+
+## 4. Visualización de la Topología en Modo de Edición
+* **Descripción:** La interfaz gráfica actualizó el lienzo mostrando el nodo del destino *Eventhouse* conectado al flujo `taxi-data-stream`. La barra superior muestra alertas indicando que las modificaciones permanecen de forma local en modo de borrador hasta que sean distribuidas formalmente.
+
+![Lienzo de Diseño Técnico en Modo Edit](imagenes_4.2/Captura%20de%20pantalla%202026-07-02%20174413.png)
+
+---
+
+## 5. Publicación de la Topología de Datos (Publish Changes)
+* **Descripción:** Con la ruta de datos completamente trazada y validada en el lienzo, se procedió a hacer clic en el botón **Publish** para guardar y compilar los cambios en la infraestructura de la nube.
+* **Resultado:** El portal desplegó la confirmación de éxito en la esquina superior derecha (*Successfully published. The topology changes were published*), iniciando el aprovisionamiento en caliente del nodo.
+
+![Notificación de Publicación Exitosa](imagenes_4.2/Captura%20de%20pantalla%202026-07-02%20174508.png)
+
+---
+
+## 6. Validación de Ingesta Activa y Vista Previa de Datos
+* **Descripción:** Una vez que el sistema cambió al modo en vivo (*Live mode*), todos los componentes de la topología (origen, stream y destino) pasaron a estado **Active** con indicadores verdes.
+* **Acción final:** Al seleccionar el nodo del Eventhouse y abrir la pestaña inferior **Data preview**, se refrescó la vista hasta confirmar la llegada continua de registros estructurados con marcas de tiempo, confirmando el éxito del laboratorio.
+
+![Vista Previa de Filas Ingeridas en Tiempo Real](imagenes_4.2/Captura%20de%20pantalla%202026-07-02%20175322.png)
