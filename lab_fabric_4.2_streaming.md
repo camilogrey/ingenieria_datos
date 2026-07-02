@@ -3,7 +3,7 @@ Partiendo de que se ha creado un nuevo workspace se realizaran los siguientes pr
 
 * **Crear un Eventstream**
 * **Crear un Eventhouse y almacenar el stream**
-* **Consultar la captura de datos**
+* **Consulta y Análisis de Datos en Tiempo Real con KQL**
 
 # Reporte de Laboratorio: Creación de un Eventstream en Microsoft Fabric
 
@@ -111,3 +111,73 @@ Este repositorio documenta el desarrollo práctico del laboratorio **"Create an 
 * **Acción final:** Al seleccionar el nodo del Eventhouse y abrir la pestaña inferior **Data preview**, se refrescó la vista hasta confirmar la llegada continua de registros estructurados con marcas de tiempo, confirmando el éxito del laboratorio.
 
 ![Vista Previa de Filas Ingeridas en Tiempo Real](imagenes_4.2/Captura%20de%20pantalla%202026-07-02%20175322.png)
+
+# Consulta y Análisis de Datos en Tiempo Real con KQL
+
+# Reporte de Laboratorio: Consulta y Análisis de Datos en Tiempo Real con KQL
+
+Este repositorio documenta el desarrollo práctico del laboratorio **"Query the captured data"**. El objetivo principal fue acceder a la base de datos Kusto (`taxi-eventhouse`), explorar el esquema mediante conjuntos de consultas KQL (*KQL Queryset*), estructurar consultas analíticas de agregación temporal y generar visualizaciones gráficas integradas que se actualizan con el flujo continuo.
+
+---
+
+## 1. Localización de los Componentes en el Workspace
+* **Descripción:** Se ingresó al espacio de trabajo dedicado (`dp900-streaming`).
+* **Acción:** Se validó la presencia de los recursos aprovisionados: el flujo continuo `taxi-data` y la base de datos KQL analítica `taxi-eventhouse`.
+
+![Inventario de Recursos en el Workspace](imagenes_4.2/Captura%20de%20pantalla%202026-07-02%20180459.png)
+
+---
+
+## 2. Métricas de Ingesta en la Base de Datos KQL
+* **Descripción:** Se abrió la base de datos KQL `taxi-eventhouse` para revisar el panel general (*Overview*).
+* **Resultado:** El *Data Activity Tracker* confirmó la ingesta activa de 43.1 mil filas recibidas en el día actual dentro de la tabla administrada `yellow-taxi`.
+
+![Panel de Control de la Base de Datos KQL](imagenes_4.2/Captura%20de%20pantalla%202026-07-02%20180705.png)
+
+---
+
+## 3. Inicialización del KQL Queryset
+* **Descripción:** Se accedió al entorno de desarrollo integrado abriendo el elemento `taxi-eventhouse_queryset`.
+* **Resultado:** El editor de código se inicializó con guías predeterminadas para la exploración de datos a través de comandos de Kusto (KQL).
+
+![Entorno de Desarrollo KQL Queryset](imagenes_4.2/Captura%20de%20pantalla%202026-07-02%20180828.png)
+
+---
+
+## 4. Validación de Muestra de Datos (Take 100)
+* **Descripción:** Se ejecutó el comando base `['yellow-taxi'] | take 100` para comprobar la salud de los datos.
+* **Resultado:** El motor Kusto retornó los primeros 100 registros, validando la correcta estructura de marcas de tiempo e identificadores de viaje.
+
+![Resultado de Consulta de Muestra en KQL](imagenes_4.2/Captura%20de%20pantalla%202026-07-02%20181026.png)
+
+---
+
+## 5. Consulta Analítica de Agregación Temporal (Summarize y Bin)
+* **Descripción:** Se implementó una consulta analítica avanzada utilizando operadores de agregación:
+  ```kql
+  ['yellow-taxi']
+  | summarize PickupCount = count() by bin(todatetime(tpep_pickup_datetime), 1h)
+  ```
+* **Objetivo:** Agrupar y contabilizar el número total de servicios de taxi en bloques o ventanas de tiempo aisladas de una hora (`bin(..., 1h)`).
+
+![Resultados Consolidados de Agregación Horaria](imagenes_4.2/Captura%20de%20pantalla%202026-07-02%20181156.png)
+
+---
+
+## 6. Reporte de Datos Tabulares Consolidados
+* **Descripción:** Inspección detallada del resultado tabular generado por la función de agregación.
+* **Resultado:** La consola web expuso un resumen ordenado cronológicamente que detalla las fluctuaciones exactas en la demanda por hora (`PickupCount`) del dataset.
+
+![Vista Extendida de la Tabla Analítica](imagenes_4.2/Captura%20de%20pantalla%202026-07-02%20183622.png)
+
+---
+
+## 7. Visualización del Histograma en Tiempo Real (Column Chart)
+* **Descripción:** Se seleccionó el menú de formato visual integrado en la parte inferior para transformar el reporte tabular en un gráfico analítico.
+* **Resultado:** Al configurar el tipo de gráfico como **Column chart**, se generó un histograma dinámico que muestra las tendencias de viajes. Al volver a ejecutar la consulta (**Run**), las barras cambian su altura automáticamente debido a la llegada constante de datos desde el stream en vivo.
+
+![Gráfico de Columnas de Tendencias Horarias](imagenes_4.2/Captura%20de%20pantalla%202026-07-02%20183929.png)
+
+## Eliminación del recurso
+
+![Eliminación del Workspace](imagenes_4.2/Captura%20de%20pantalla%202026-07-02%20185419.png)
