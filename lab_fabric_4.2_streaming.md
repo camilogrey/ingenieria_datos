@@ -181,3 +181,9 @@ Este repositorio documenta el desarrollo práctico del laboratorio **"Query the 
 ## Eliminación del recurso
 
 ![Eliminación del Workspace](imagenes_4.2/Captura%20de%20pantalla%202026-07-02%20185419.png)
+
+<div align="center">
+  <a href="lab_fabric_4.1_lakehouse.md">⏪ Atrás</a> | 
+  <a href="Lab4_completo.md">🏠 Menú Principal</a> | 
+  <a href="lab_powerbi_4.3_visualization.md">Adelante ⏩</a>
+</div>

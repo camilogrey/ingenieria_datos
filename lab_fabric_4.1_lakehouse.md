@@ -177,4 +177,8 @@ Utilizar el punto de análisis de SQL (*SQL analytics endpoint*) integrado en Mi
 
 ![Métricas y Filas Resultantes de la Consulta SQL](imagenes_4.1/Captura%20de%20pantalla%202026-07-01%20200230.png)
 
- 
+ <div align="center">
+  <a href="Lab%204%20Ruta%20aprendizaje%204.md">⏪ Atrás</a> | 
+  <a href="Lab4_completo.md">🏠 Menú Principal</a> | 
+  <a href="lab_fabric_4.2_streaming.md">Adelante ⏩</a>
+</div>

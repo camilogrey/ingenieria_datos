@@ -216,3 +216,9 @@ Generar visualizaciones gráficas interactivas y analizar el modelo de datos con
 * **Resultado:** Creación del archivo `.pbix` local, empaquetando el modelo de datos, conexiones y visualizaciones.
 
 ![Guardado del Archivo PBIX](imagenes_4.3/Captura%20de%20pantalla%202026-07-02%20201414.png)
+
+<div align="center">
+  <a href="lab_fabric_4.2_streaming.md">⏪ Atrás</a> | 
+  <a href="Lab4_completo.md">🏠 Menú Principal</a> | 
+  <a href="Lab4_completo.md">Adelante (Menú) ⏩</a>
+</div>
