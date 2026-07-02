@@ -157,3 +157,9 @@ Además de los gráficos tradicionales (líneas, columnas, mapas), Power BI inte
 * **Visual de Preguntas y Respuestas (Q&A):** Responde preguntas de negocio con gráficos construidos al vuelo a partir de lenguaje natural.
 
 ![](/imagenes_lab4/Captura%20de%20pantalla%202026-06-30%20194015.png)
+
+<div align="center">
+  <a href="Lab4_completo.md">⏪ Atrás (Menú)</a> | 
+  <a href="Lab4_completo.md">🏠 Menú Principal</a> | 
+  <a href="lab_fabric_4.1_lakehouse.md">Adelante ⏩</a>
+</div>
