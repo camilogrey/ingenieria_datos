@@ -76,7 +76,7 @@ Organizar, relacionar y refinar las tres tablas importadas (clientes, productos 
 * **Descripción:** En la vista de Modelo (*Model view*), se seleccionó el campo `Revenue` dentro de la tabla `orders`.
 * **Acción:** En el panel de Propiedades, se cambió su formato a **Moneda** (*Currency*). Esto garantiza que los valores financieros se representen con el símbolo adecuado en las futuras visualizaciones.
 
-![Formato de Moneda para el Campo Revenue](RUTA_A_TU_IMAGEN_193324)
+![Formato de Moneda para el Campo Revenue](imagenes_4.3/Captura%20de%20pantalla%202026-07-02%20193324.png)
 
 ---
 
@@ -84,7 +84,7 @@ Organizar, relacionar y refinar las tres tablas importadas (clientes, productos 
 * **Descripción:** Se estructuró una relación de desglose de información para el inventario.
 * **Acción:** En la tabla `products`, se hizo clic derecho sobre el campo `Category` y se seleccionó la opción **Crear jerarquía** (*Create hierarchy*), generando un nuevo elemento anidado en el modelo.
 
-![Creación de Jerarquía de Categorías](RUTA_A_TU_IMAGEN_193453)
+![Creación de Jerarquía de Categorías](imagenes_4.3/Captura%20de%20pantalla%202026-07-02%20193453.png)
 
 ---
 
@@ -92,7 +92,7 @@ Organizar, relacionar y refinar las tres tablas importadas (clientes, productos 
 * **Descripción:** Se completó la estructura jerárquica agregando el nivel de detalle de los productos.
 * **Acción:** Se hizo clic derecho sobre el campo `ProductName`, seleccionando **Agregar a la jerarquía** (*Add to hierarchy*) y eligiendo la jerarquía recién creada. Esto permite funciones de profundización (*drill-down*) en los gráficos.
 
-![Adición de ProductName a la Jerarquía](RUTA_A_TU_IMAGEN_193543)
+![Adición de ProductName a la Jerarquía](imagenes_4.3/Captura%20de%20pantalla%202026-07-02%20193543.png)
 
 ---
 
@@ -100,7 +100,7 @@ Organizar, relacionar y refinar las tres tablas importadas (clientes, productos 
 * **Descripción:** Para mejorar la claridad semántica del modelo de datos de cara a los usuarios de negocio.
 * **Acción:** Desde el panel de Propiedades, se modificó el nombre predeterminado de la jerarquía a **Categorized Product**.
 
-![Renombrado de la Jerarquía en el Panel de Propiedades](RUTA_A_TU_IMAGEN_194243)
+![Renombrado de la Jerarquía en el Panel de Propiedades](imagenes_4.3/Captura%20de%20pantalla%202026-07-02%20194243.png)
 
 ---
 
@@ -108,7 +108,7 @@ Organizar, relacionar y refinar las tres tablas importadas (clientes, productos 
 * **Descripción:** Se procedió a explorar los datos a nivel de fila individual.
 * **Acción:** En el menú lateral izquierdo, se cambió de la Vista de Modelo a la **Vista de Tabla** (*Table view*), visualizando los registros crudos ingeridos y localizando la tabla de clientes.
 
-![Transición a la Vista de Tabla](RUTA_A_TU_IMAGEN_194413)
+![Transición a la Vista de Tabla](imagenes_4.3/Captura%20de%20pantalla%202026-07-02%20194413.png)
 
 ---
 
@@ -116,4 +116,5 @@ Organizar, relacionar y refinar las tres tablas importadas (clientes, productos 
 * **Descripción:** Se instruyó a Power BI sobre la naturaleza espacial de los datos de ubicación.
 * **Acción:** Dentro de la tabla `customers`, se seleccionó la columna `City`. En la cinta de herramientas de columnas, se cambió su **Categoría de datos** (*Data Category*) a **Ciudad** (*City*), optimizando el campo para su uso correcto en mapas.
 
-![Configuración de Categoría de Datos para Ciudades](RUTA_A_TU_IMAGEN_194509)
+![Configuración de Categoría de Datos para Ciudades](imagenes_4.3/Captura%20de%20pantalla%202026-07-02%20194509.png)
+
