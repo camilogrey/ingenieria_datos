@@ -118,3 +118,101 @@ Organizar, relacionar y refinar las tres tablas importadas (clientes, productos 
 
 ![Configuración de Categoría de Datos para Ciudades](imagenes_4.3/Captura%20de%20pantalla%202026-07-02%20194509.png)
 
+# Creación de un Informe en Power BI
+
+Generar visualizaciones gráficas interactivas y analizar el modelo de datos construido previamente.
+
+---
+
+## 1. Configuración de Visualizaciones de Mapas
+* **Acción:** En el menú de Opciones y Configuración > Seguridad, se habilitó la casilla **Use Map and Filled Map visuals**.
+* **Objetivo:** Garantizar que los componentes geoespaciales se rendericen correctamente en el lienzo.
+
+![Habilitación de Mapas en Opciones](imagenes_4.3/Captura%20de%20pantalla%202026-07-02%20195957.png)
+
+---
+
+## 2. Acceso a la Vista de Informe
+* **Acción:** Se seleccionó el icono de **Vista de informe** (*Report view*) en el margen izquierdo.
+* **Objetivo:** Abrir el lienzo en blanco para comenzar el diseño del panel interactivo.
+
+![Interfaz de Vista de Informe](imagenes_4.3/Captura%20de%20pantalla%202026-07-02%20200331.png)
+
+---
+
+## 3. Inserción del Título del Informe
+* **Acción:** Se agregó un cuadro de texto en la parte superior con la leyenda **"Sales Report"**.
+* **Formato:** Texto en negrita con un tamaño de fuente de 32 para destacar el propósito del panel.
+
+![Título del Informe](imagenes_4.3/Captura%20de%20pantalla%202026-07-02%20200503.png)
+
+---
+
+## 4. Creación de Tabla Base de Productos
+* **Acción:** Se hizo clic en un área vacía y se seleccionó el campo jerárquico **Categorized Product** desde la tabla `Products`.
+* **Resultado:** Inserción automática de un componente de tabla en el lienzo.
+
+![Tabla de Productos Categorizados](imagenes_4.3/Captura%20de%20pantalla%202026-07-02%20200550.png)
+
+---
+
+## 5. Integración de la Métrica de Ingresos (Revenue)
+* **Acción:** Con la tabla seleccionada, se marcó el campo **Revenue** de la tabla `Orders`.
+* **Resultado:** Los ingresos se añadieron como una nueva columna en la tabla, mostrando el formato de moneda configurado previamente.
+
+![Tabla con Columna de Ingresos](imagenes_4.3/Captura%20de%20pantalla%202026-07-02%20200701.png)
+
+---
+
+## 6. Conversión a Gráfico de Columnas Apiladas
+* **Acción:** Se cambió el tipo de visualización seleccionando el **Gráfico de columnas apiladas** (*Stacked column chart*) en el panel lateral.
+* **Resultado:** Transformación de la tabla en un gráfico que facilita la comparación de ingresos por categoría.
+
+![Gráfico de Columnas Apiladas](imagenes_4.3/Captura%20de%20pantalla%202026-07-02%20200755.png)
+
+---
+
+## 7. Función de Profundización (Drill-down)
+* **Acción:** Se activó el modo de profundización (icono **↓**) y se hizo clic en una columna.
+* **Resultado:** Desglose interactivo que muestra los ingresos específicos de los productos individuales dentro de la categoría seleccionada.
+
+![Visualización de Drill-down por Producto](imagenes_4.3/Captura%20de%20pantalla%202026-07-02%20200956.png)
+
+---
+
+## 8. Retorno a la Vista Principal (Drill-up)
+* **Acción:** Se utilizó el botón de subida (icono **↑**) para regresar a la vista consolidada de categorías y se desactivó la función de profundización.
+
+![Gráfico Consolidado tras el Drill-up](imagenes_4.3/Captura%20de%20pantalla%202026-07-02%20201018.png)
+
+---
+
+## 9 y 10. Gráfico Circular de Cantidad por Categoría
+* **Acción:** En un espacio en blanco, se cruzaron los campos **Quantity** (`Orders`) y **Category** (`Products`), transformando el resultado en un **Gráfico circular** (*Pie chart*).
+* **Resultado:** Representación visual que resalta la contribución proporcional del volumen de ventas.
+
+![Gráfico Circular de Cantidades](imagenes_4.3/Captura%20de%20pantalla%202026-07-02%20201123.png)
+
+---
+
+## 11. Mapa Geoespacial de Ingresos por Ciudad
+* **Acción:** Se seleccionó el campo **City** (`Customers`) y **Revenue** (`Orders`).
+* **Resultado:** Generación de un mapa interactivo con burbujas de calor que muestran los ingresos geolocalizados.
+
+![Mapa de Ingresos por Ciudad](imagenes_4.3/Captura%20de%20pantalla%202026-07-02%20201243.png)
+
+---
+
+## 12. Interacción de Resaltado Cruzado
+* **Acción:** Se seleccionó una ciudad específica directamente en el mapa.
+* **Resultado:** Las demás visualizaciones (columnas y gráfico circular) se filtraron dinámicamente para resaltar únicamente los datos de la ciudad elegida (*Cross-highlighting*).
+
+![Resaltado Cruzado Interactivo](imagenes_4.3/Captura%20de%20pantalla%202026-07-02%20201307.png)
+
+---
+
+## 13. Guardado del Proyecto
+* **Acción:** Se guardó el progreso en el menú Archivo > Guardar.
+* **Resultado:** Creación del archivo `.pbix` local, empaquetando el modelo de datos, conexiones y visualizaciones.
+
+![Guardado del Archivo PBIX](imagenes_4.3/Captura%20de%20pantalla%202026-07-02%20201414.png)
